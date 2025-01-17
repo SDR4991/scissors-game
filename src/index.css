@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+15&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap");
+
+* {
+  font-family: "Montserrat", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: black;
+  background: linear-gradient(to top, #232526, #414345);
+  padding: 3rem;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  padding-bottom: 30px;
+  font-family: "Jersey 15", serif;
+  font-size: 64px;
+  text-align: center;
+  text-shadow: -5px 5px 2px #515254;
+}
+
+.fields {
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 200px;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  padding-bottom: 30px;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-family: "Oswald", serif;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.name {
+  font-family: "Oswald", serif;
+}
+
+.input {
+  padding: 5px;
+  height: 25px;
+  margin-bottom: 20px;
+}
+
+.img {
+  background-color: white;
+  width: 150px;
+  height: 150px;
+}
+
+.annoucement {
+  font-size: 42px;
+  font-weight: 500;
+  font-family: "Oswald", serif;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.btn-play {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-next {
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+}
+
+.btn-reset {
+  margin: 0 auto;
+  font-weight: 700;
+  width: 120px;
+  height: 100%;
+}
+
+button {
+  font-size: 20px;
+  font-weight: 500;
+  background-color: gray;
+  border: 8px ridge rgb(158, 156, 156);
+  box-shadow: 0px 0px 12px 12px rgba(105, 2, 2, 0.3);
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(-5%);
+  transition: all 0.2s;
+}
+
+button:active {
+  transform: scale(90%);
+  transition: all 0.2s;
+}
