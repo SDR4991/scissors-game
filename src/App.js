@@ -1,6 +1,5 @@
 import { useState } from "react";
-import scissors from "./img/scissors.png";
-import stone from "./img/stone.png";
+import { motion } from "motion/react";
 
 function App() {
   const [player1, setPlayer1] = useState(null);
@@ -10,6 +9,8 @@ function App() {
   const [formSubmit1, setFormSubmit1] = useState("");
   const [formSubmit2, setFormSubmit2] = useState("");
   const [start, setStart] = useState(false);
+  const [scorePlayer1, setScorePlayer1] = useState("");
+  const [scorePlayer2, setScorePlayer2] = useState("");
 
   function handlePlayer1() {
     setPlayer1(() => Math.random() >= 0.5);
@@ -47,13 +48,27 @@ function App() {
     setStart(true);
   }
 
+  function handleScorePlayer1(state) {
+    setScorePlayer1((state) => state++);
+  }
+
+  function handleScorePlayer2(state) {
+    setScorePlayer2((state) => state++);
+  }
+
   return (
     <>
       {!start ? (
-        <div className="app">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 0.98 }}
+          className="app-start "
+        >
           <h1>SCISSOR GAME</h1>
-          <button onClick={() => handleStart()}>START THE GAME</button>
-        </div>
+          <button className="btn-start" onClick={() => handleStart()}>
+            START THE GAME
+          </button>
+        </motion.div>
       ) : (
         <div className="app">
           <h2 className="title">Stone & Scissors Game</h2>
@@ -61,7 +76,7 @@ function App() {
             <div className="section">
               {!formSubmit1 ? (
                 <form className="form">
-                  <p className="subtitle">Player 1 enter your name</p>
+                  <p className="subtitle">Please enter your name to start</p>
                   <input
                     className="input"
                     type="text"
@@ -78,25 +93,31 @@ function App() {
                   </button>
                 </form>
               ) : (
-                "Ready to play!"
-              )}
+                <div className="game">
+                  <p className="score">
+                    Ready to play! Your score: {scorePlayer1}
+                  </p>
+                  <h3 className="name">
+                    {formSubmit1 ? `Player ${formSubmit1}` : "Player 1"}
+                  </h3>
+                  {player1 === null ? (
+                    "Here will be your choice"
+                  ) : player1 ? (
+                    <p className="symbol">Scissors ✂️</p>
+                  ) : (
+                    <p className="symbol">Stone 🪨</p>
+                  )}
 
-              <h3 className="name">
-                {formSubmit1 ? `Player ${formSubmit1}` : "Player 1"}
-              </h3>
-              <img
-                className="img"
-                src={player1 ? scissors : stone}
-                alt="element"
-              />
-              <button className="btn-play" onClick={handlePlayer1}>
-                Play!
-              </button>
+                  <button className="btn-play" onClick={handlePlayer1}>
+                    Play!
+                  </button>
+                </div>
+              )}
             </div>
             <div className="section">
               {!formSubmit2 ? (
                 <form className="form">
-                  <p className="subtitle">Player 2 enter your name</p>
+                  <p className="subtitle">Please enter your name to start</p>
                   <input
                     className="input"
                     type="text"
@@ -113,19 +134,25 @@ function App() {
                   </button>
                 </form>
               ) : (
-                "Ready to play!"
+                <div className="game">
+                  <p className="score">
+                    Ready to play! Your score: {scorePlayer2}
+                  </p>
+                  <h3 className="name">
+                    {formSubmit2 ? `Player ${formSubmit2}` : "Player 2"}
+                  </h3>
+                  {player2 === null ? (
+                    "Here will be your choice"
+                  ) : player2 ? (
+                    <p className="symbol">Scissors ✂️</p>
+                  ) : (
+                    <p className="symbol">Stone 🪨</p>
+                  )}
+                  <button className="btn-play" onClick={handlePlayer2}>
+                    Play!
+                  </button>
+                </div>
               )}
-              <h2 className="name">
-                {formSubmit2 ? `Player ${formSubmit2}` : "Player 2"}
-              </h2>
-              <img
-                className="img"
-                src={player2 ? scissors : stone}
-                alt="element"
-              />
-              <button className="btn-play" onClick={handlePlayer2}>
-                Play!
-              </button>
             </div>
           </div>
           <p className="annoucement">
@@ -140,6 +167,13 @@ function App() {
             Play Again
           </button>
         </div>
+      )}
+      {!start ? (
+        <footer>
+          <p>Made by SDR</p>
+        </footer>
+      ) : (
+        ""
       )}
     </>
   );

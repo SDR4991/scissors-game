@@ -8,6 +8,7 @@
 }
 
 body {
+  position: relative;
   min-height: 100vh;
   color: black;
   background: linear-gradient(to top, #232526, #414345);
@@ -28,7 +29,7 @@ body {
 }
 
 .fields {
-  padding-bottom: 30px;
+  padding-bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,12 +63,17 @@ body {
 
 .name {
   font-family: "Oswald", serif;
+  font-size: 24px;
+  text-decoration: underline;
 }
 
 .input {
-  padding: 5px;
-  height: 25px;
+  padding: 10px;
+  height: 32px;
   margin-bottom: 20px;
+  border: 2px ridge rgb(158, 156, 156);
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .img {
@@ -84,8 +90,12 @@ body {
   text-align: center;
 }
 
+.score {
+  font-size: 24px;
+}
+
 .btn-play {
-  width: 100%;
+  width: 70%;
   height: 100%;
 }
 
@@ -119,4 +129,50 @@ button:hover {
 button:active {
   transform: scale(90%);
   transition: all 0.2s;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Oswald", serif;
+}
+
+h1 {
+  font-family: "Jersey 15", serif;
+  font-weight: 700;
+  font-size: 82px;
+  text-align: center;
+  text-shadow: -5px 5px 2px #515254;
+}
+
+.app-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-start {
+  margin-top: 75px;
+  font-size: 24px;
+  width: 250px;
+  height: 80px;
+}
+
+.symbol {
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
