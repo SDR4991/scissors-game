@@ -86,7 +86,7 @@ body {
   font-size: 42px;
   font-weight: 500;
   font-family: "Oswald", serif;
-  padding-bottom: 20px;
+  padding: 20px 0 20px 0;
   text-align: center;
 }
 
@@ -95,7 +95,9 @@ body {
 }
 
 .btn-play {
-  width: 70%;
+  font-size: 30px;
+  margin: 0 auto;
+  width: 30%;
   height: 100%;
 }
 
@@ -175,4 +177,30 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 30px;
+}
+
+.winner-announce {
+  font-size: 24px;
+  font-family: "Jersey 15", serif;
+  font-size: 64px;
+  text-align: center;
+  text-shadow: -5px 5px 2px #515254;
+  position: fixed;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  padding: 3rem 6rem 4rem 6rem;
+}
+
+.overlay {
+  z-index: 20;
+  position: fixed;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(58, 58, 58, 0.334);
 }
